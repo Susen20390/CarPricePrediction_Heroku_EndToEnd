@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Car Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="length" placeholder="length(140 to 210)" required="required" />
+        <input type="text" name="width" placeholder="width(60 to 75)" required="required" />
+		<input type="text" name="height" placeholder="height(47 to 60)" required="required" />
+		<input type="text" name="curb-weight" placeholder="curb-weight(1488 to 3950)" required="required" />
+		<input type="text" name="bore" placeholder="bore(2 to 4)" required="required" />
+		<input type="text" name="stroke" placeholder="stroke(2 to 4)" required="required" />
+		<input type="text" name="compression-rate" placeholder="compression-rate(7 to 23)" required="required" />
+		<input type="text" name="horsepower" placeholder="horsepower(47 to 260)" required="required" />
+		<input type="text" name="peak-rpm" placeholder="peak-rpm(4000 to 7000)" required="required" />
+		<input type="text" name="city-mpg" placeholder="city-mpg(10 to 50)" required="required" />
+		<input type="text" name="highway-mpg" placeholder="highway-mpg(15 to 55)" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
